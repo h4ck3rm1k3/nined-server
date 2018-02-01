@@ -6,8 +6,7 @@ sys.path.insert(0, os.path.dirname(__file__) or '.')
 
 for x in os.environ:
     print 'debug', x,"=",  os.environ[x]
-    debug PYTHONIOENCODING = UTF-8
-
+# debug PYTHONIOENCODING = UTF-8
 # debug APP_FILE = wsgi/application
 # debug DESCRIPTION = Python 2.7 available as docker container....
 # debug HOME = /opt/app-root/src
