@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.dirname(__file__) or '.')
 
 for x in os.environ:
     print 'debug', x,"=",  os.environ[x]
+    # /opt/app-root/lib/python2.7/site-packages/Werkzeug-0.14.1-py2.7.egg
 # debug PYTHONIOENCODING = UTF-8
 # debug APP_FILE = wsgi/application
 # debug DESCRIPTION = Python 2.7 available as docker container....
@@ -65,6 +66,7 @@ for x in os.environ:
 # debug XDG_DATA_DIRS = /opt/rh/python27/root/usr/share:/usr/local/share:/usr/share
 # debug X_SCLS = python27 rh-nodejs6 httpd24 
 # debug container = oci
+
 
 
 # PY_DIR = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], "python")
