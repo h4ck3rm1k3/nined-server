@@ -6,5 +6,5 @@ setup(name='nined-server',
       author='James Michael DuPont',
       author_email='jamesmikedupont+nined@gmail.com',
       url='https://www.python.org/community/sigs/current/distutils-sig',
-      install_requires=['Flask>=0.7.2', 'MarkupSafe'],
+      install_requires=['Flask>=0.12.2', 'MarkupSafe'],
       )
