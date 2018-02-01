@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 
-listen = os.environ['NINED_SERVER_SERVICE_HOST'] # = 172.30.249.186
+#listen = os.environ['NINED_SERVER_SERVICE_HOST'] # = 172.30.249.186
 port = 8080
 
 
@@ -13,5 +13,5 @@ port = 8080
 def hello():
     return "Hello World!"
 
-#if __name__ == "__main__":
-app.run(host=listen, port = port)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port = port)
