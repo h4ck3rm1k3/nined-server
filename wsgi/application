@@ -6,22 +6,83 @@ sys.path.insert(0, os.path.dirname(__file__) or '.')
 
 for x in os.environ:
     print 'debug', x,"=",  os.environ[x]
-    
-PY_DIR = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], "python")
+    debug PYTHONIOENCODING = UTF-8
 
-virtenv = PY_DIR + '/virtenv/'
+# debug APP_FILE = wsgi/application
+# debug DESCRIPTION = Python 2.7 available as docker container....
+# debug HOME = /opt/app-root/src
+# debug HOSTNAME = nined-server-8-s4dbq
+# debug KUBERNETES_PORT = tcp://172.30.0.1:443
+# debug KUBERNETES_PORT_443_TCP = tcp://172.30.0.1:443
+# debug KUBERNETES_PORT_443_TCP_ADDR = 172.30.0.1
+# debug KUBERNETES_PORT_443_TCP_PORT = 443
+# debug KUBERNETES_PORT_443_TCP_PROTO = tcp
+# debug KUBERNETES_PORT_53_TCP = tcp://172.30.0.1:53
+# debug KUBERNETES_PORT_53_TCP_ADDR = 172.30.0.1
+# debug KUBERNETES_PORT_53_TCP_PORT = 53
+# debug KUBERNETES_PORT_53_TCP_PROTO = tcp
+# debug KUBERNETES_PORT_53_UDP = udp://172.30.0.1:53
+# debug KUBERNETES_PORT_53_UDP_ADDR = 172.30.0.1
+# debug KUBERNETES_PORT_53_UDP_PORT = 53
+# debug KUBERNETES_PORT_53_UDP_PROTO = udp
+# debug KUBERNETES_SERVICE_HOST = 172.30.0.1
+# debug KUBERNETES_SERVICE_PORT = 443
+# debug KUBERNETES_SERVICE_PORT_DNS = 53
+# debug KUBERNETES_SERVICE_PORT_DNS_TCP = 53
+# debug KUBERNETES_SERVICE_PORT_HTTPS = 443
+# debug LANG = en_US.UTF-8
+# debug LC_ALL = en_US.UTF-8
+# debug LD_LIBRARY_PATH = /opt/rh/python27/root/usr/lib64:/opt/rh/rh-nodejs6/root/usr/lib64:/opt/rh/httpd24/root/usr/lib64
+# debug LD_PRELOAD = libnss_wrapper.so
+# debug LIBRARY_PATH = /opt/rh/httpd24/root/usr/lib64
+# debug MANPATH = /opt/rh/python27/root/usr/share/man:/opt/rh/rh-nodejs6/root/usr/share/man:/opt/rh/httpd24/root/usr/share/man:
+# debug NINED_SERVER_PORT = tcp://172.30.249.186:8080
+# debug NINED_SERVER_PORT_8080_TCP = tcp://172.30.249.186:8080
+# debug NINED_SERVER_PORT_8080_TCP_ADDR = 172.30.249.186
+# debug NINED_SERVER_PORT_8080_TCP_PORT = 8080
+# debug NINED_SERVER_PORT_8080_TCP_PROTO = tcp
+# debug NINED_SERVER_SERVICE_HOST = 172.30.249.186
+# debug NINED_SERVER_SERVICE_PORT = 8080
+# debug NINED_SERVER_SERVICE_PORT_8080_TCP = 8080
+# debug NSS_WRAPPER_GROUP = /etc/group
+# debug NSS_WRAPPER_PASSWD = /opt/app-root/etc/passwd
+# debug OPENSHIFT_BUILD_COMMIT = 8bcc8541411859206c18470d0ae27fc8d13ec355
+# debug OPENSHIFT_BUILD_NAME = nined-server-5
+# debug OPENSHIFT_BUILD_NAMESPACE = nined-server
+# debug OPENSHIFT_BUILD_REFERENCE = master
+# debug OPENSHIFT_BUILD_SOURCE = https://github.com/h4ck3rm1k3/nined-server.git 
+# debug PATH = /opt/app-root/bin:/opt/rh/python27/root/usr/bin:/opt/rh/rh-nodejs6/root/usr/bin:/opt/rh/httpd24/root/usr/bin:/opt/rh/httpd24/root/usr/sbin:/opt/app-root/src/.local/bin/:/opt/app-root/src/bin:/opt/app-root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# debug PIP_NO_CACHE_DIR = off
+# debug PKG_CONFIG_PATH = /opt/rh/python27/root/usr/lib64/pkgconfig:/opt/rh/httpd24/root/usr/lib64/pkgconfig
+# debug PWD = /opt/app-root/src
+# debug PYTHONPATH = /opt/rh/rh-nodejs6/root/usr/lib/python2.7/site-packages
+# debug PYTHONUNBUFFERED = 1
+# debug PYTHON_VERSION = 2.7
+# debug SHLVL = 0
+# debug STI_SCRIPTS_PATH = /usr/libexec/s2i
+# debug STI_SCRIPTS_URL = image:///usr/libexec/s2i
+# debug SUMMARY = Platform for building and running Python 2.7 applications
+# debug VIRTUAL_ENV = /opt/app-root
+# debug XDG_DATA_DIRS = /opt/rh/python27/root/usr/share:/usr/local/share:/usr/share
+# debug X_SCLS = python27 rh-nodejs6 httpd24 
+# debug container = oci
 
-PY_CACHE = os.path.join(virtenv,
-                        'lib',
-                        os.environ['OPENSHIFT_PYTHON_VERSION'],
-                        'site-packages')
 
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(PY_CACHE)
-virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
+# PY_DIR = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], "python")
 
-try:
-    exec(open(virtualenv).read(), dict(__file__=virtualenv))
-except IOError:
-    pass
+# virtenv = PY_DIR + '/virtenv/'
+
+# PY_CACHE = os.path.join(virtenv,
+#                         'lib',
+#                         os.environ['OPENSHIFT_PYTHON_VERSION'],
+#                         'site-packages')
+
+# os.environ['PYTHON_EGG_CACHE'] = os.path.join(PY_CACHE)
+# virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
+
+# try:
+#     exec(open(virtualenv).read(), dict(__file__=virtualenv))
+# except IOError:
+#     pass
 
 from nined_server_flaskapp import app as application
